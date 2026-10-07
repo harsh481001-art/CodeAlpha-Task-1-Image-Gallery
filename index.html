@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>📸 CodeAlpha Image Gallery</h1>
+    <p>Explore and add beautiful images</p>
+
+    <button id="addImageBtn" class="add-image-btn">
+        ➕ Add Image
+    </button>
+</header>
+
+<!-- Filters -->
+<div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="nature">🌿 Nature</button>
+    <button class="filter-btn" data-filter="animals">🐶 Animals</button>
+    <button class="filter-btn" data-filter="travel">✈️ Travel</button>
+    <button class="filter-btn" data-filter="food">🍔 Food</button>
+    <button class="filter-btn" data-filter="city">🏙️ City</button>
+</div>
+
+<!-- Gallery -->
+<main class="gallery" id="gallery"></main>
+
+
+<!-- Add Image Modal -->
+<div class="modal" id="addModal">
+
+    <div class="modal-content">
+
+        <button class="modal-close" id="modalClose">&times;</button>
+
+        <h2>➕ Add New Image</h2>
+
+        <form id="imageForm">
+
+            <label>Choose Image</label>
+            <input
+                type="file"
+                id="imageFile"
+                accept="image/*"
+                required
+            >
+
+            <label>Image Name</label>
+            <input
+                type="text"
+                id="imageName"
+                placeholder="Enter image name"
+                required
+            >
+
+            <label>Category</label>
+            <select id="imageCategory" required>
+                <option value="">Select Category</option>
+                <option value="nature">🌿 Nature</option>
+                <option value="animals">🐶 Animals</option>
+                <option value="travel">✈️ Travel</option>
+                <option value="food">🍔 Food</option>
+                <option value="city">🏙️ City</option>
+            </select>
+
+            <button type="submit" class="submit-btn">
+                Add Image
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+
+    <button class="close" id="closeBtn">&times;</button>
+
+    <button class="prev" id="prevBtn">
+        &#10094;
+    </button>
+
+    <img id="lightbox-img" src="" alt="Large Image">
+
+    <button class="next" id="nextBtn">
+        &#10095;
+    </button>
+
+    <a id="downloadBtn" class="download-btn" download>
+        ⬇ Download
+    </a>
+
+</div>
+
+
+<footer>
+    <p>© 2026 Harsh Sharma | CodeAlpha Frontend Project</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
